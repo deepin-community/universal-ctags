@@ -1,0 +1,18 @@
+Description: Don't run git during tests
+Origin: vendor
+Forwarded: no
+Author: Alessandro Ghedini <ghedo@debian.org>
+Reviewed-by: Alessandro Ghedini <ghedo@debian.org>
+Last-Update: 2021-09-03
+
+--- a/makefiles/testing.mak
++++ b/makefiles/testing.mak
+@@ -5,7 +5,7 @@
+ EXTRA_DIST += misc/tlib misc/mini-geany.expected
+ MAN_TEST_TMPDIR = ManTest
+ 
+-check: tmain units tlib man-test check-genfile
++check: tmain units tlib man-test
+ 
+ # We may use CLEANFILES, DISTCLEANFILES, or etc.
+ # clean-tlib and clean-gcov are not included
