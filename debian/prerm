@@ -1,0 +1,22 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+    remove|deconfigure)
+        update-alternatives --remove ctags /usr/bin/ctags-universal
+        update-alternatives --remove etags /usr/bin/ctags-universal
+    ;;
+
+    upgrade|failed-upgrade)
+    ;;
+
+    *)
+        echo "prerm called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+#DEBHELPER#
+
+exit 0

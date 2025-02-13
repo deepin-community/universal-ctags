@@ -1,5 +1,93 @@
-template-repository (1.0-1) unstable; urgency=medium
+universal-ctags (5.9.20210829.0-2) unstable; urgency=medium
 
-  * Initial release
+  * Team upload, salsa.d.o debian namespace.
+  * Build-Depends: libseccomp-dev add [loong64]
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+  [ Debian Janitor ]
+  * Drop unnecessary dependency on dh-autoreconf.
+  * Remove unused license definitions for LGPL-2.1+, LGPL-2+.
+  * Update standards version to 4.6.1, no changes needed.
+  * Avoid explicitly specifying -Wl,--as-needed linker flag.
+
+  [ Pino Toscano ]
+  * d/control: limit libseccomp-dev only where available
+
+ -- Chris Hofstaedtler <zeha@debian.org>  Sat, 04 Jan 2025 19:42:24 +0100
+
+universal-ctags (5.9.20210829.0-1) unstable; urgency=medium
+
+  * New upstream release
+    + Fix FTBFS with glibc 2.33 (Closes: #990784)
+    + Fix etags segfault (Closes: #993509)
+  * Add debian/watch file
+  * Bump Standards-Version to 4.6.0 (no changes needed)
+  * Add patch to avoid running git during tests
+  * Update d/copyright
+
+ -- Alessandro Ghedini <ghedo@debian.org>  Fri, 03 Sep 2021 19:12:18 +0100
+
+universal-ctags (0+git20200824-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Handle deconfigure and upgrade in the prerm,
+    thanks to Antonio Terceiro. (Closes: #986339)
+
+ -- Adrian Bunk <bunk@debian.org>  Fri, 23 Apr 2021 21:29:07 +0300
+
+universal-ctags (0+git20200824-1) unstable; urgency=medium
+
+  * New upstream release
+  * Bump Standards-Version to 4.5.0 (no changes needed)
+  * Bump debhelper compat level to 13
+  * Install alternative for etags (Closes: #967077)
+  * Don't override autoreconf
+  * Drop removed files from d/copyright
+
+ -- Alessandro Ghedini <ghedo@debian.org>  Mon, 24 Aug 2020 11:57:20 +0200
+
+universal-ctags (0+git20191013-1) unstable; urgency=medium
+
+  * New upstream release
+  * Drop 01_revert-optlib-cleanup-addCompiledTagPattern.patch
+  * Bump Standards-Version to 4.4.1 (no changes needed)
+
+ -- Alessandro Ghedini <ghedo@debian.org>  Sun, 13 Oct 2019 01:27:45 +0100
+
+universal-ctags (0+git20190715-1) unstable; urgency=medium
+
+  * New upstream release
+  * Provide 'ctags' virtual package (Closes: #929963)
+  * Bump STandards-Version to 4.4.0 (no changes needed)
+  * Refresh patches
+
+ -- Alessandro Ghedini <ghedo@debian.org>  Sat, 13 Jul 2019 13:16:28 +0100
+
+universal-ctags (0+git20181215-2) unstable; urgency=medium
+
+  * Revert upstream commit that caused build failure on s390x.
+    Will need to investigate how to fix it properly, but for now reverting it
+    seems to fix the build on s390x.
+  * Bump debhlper compat level to 12
+  * Bump Standards-Version to 4.3.0 (no changes needed)
+
+ -- Alessandro Ghedini <ghedo@debian.org>  Sun, 06 Jan 2019 23:23:29 +0000
+
+universal-ctags (0+git20181215-1) unstable; urgency=medium
+
+  [ Alessandro Ghedini ]
+  * New upstream git snapshot
+    + Fix failing build (Closes: #915277)
+  * Bump Standards-Version to 4.2.1 (no change needed)
+  * Update copyright with renamed files
+
+  [ Hiroaki Nakamura ]
+  * Build with libxml2, jansson, libyaml and seccomp support (Closes: #903799)
+  * Install manpages (Closes: #901876)
+
+ -- Alessandro Ghedini <ghedo@debian.org>  Sat, 15 Dec 2018 11:22:15 +0000
+
+universal-ctags (0+git20180225-1) unstable; urgency=medium
+
+  * Initial release (Closes: #797359)
+
+ -- Alessandro Ghedini <ghedo@debian.org>  Sun, 25 Feb 2018 21:29:37 +0000

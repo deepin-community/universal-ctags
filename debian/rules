@@ -1,4 +1,15 @@
 #!/usr/bin/make -f
 
+# enable all hardening options
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
 %:
 	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		--program-transform-name='s/ctags/ctags-universal/'
+
+override_dh_install:
+	mv man/ctags.1 man/ctags-universal.1
+	dh_auto_install
